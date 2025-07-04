@@ -1,10 +1,11 @@
 services:
   - type: worker
     name: forex-strength-bot
-    runtime: python
-    build:
-      pythonVersion: 3.11.9
-    buildCommand: pip install -r requirements.txt
-    startCommand: python main.py
     envVars:
-      - fromDotEnv: true
+      - key: TWELVE_API_KEY
+        value: a7015e4ff7334de8b2cbbd885372ad2d
+      - key: TELEGRAM_BOT_TOKEN
+        value: 7553675707:AAFrct9sDFIcvzujJiaSBfzAc5yqKbKxqhw
+      - key: TELEGRAM_CHAT_ID
+        value: 6252832783
+    dockerfilePath: Dockerfile
